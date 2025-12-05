@@ -1,0 +1,19 @@
+{
+  "components": [
+    { "id": "ac1", "type": "AC", "params": { "amplitude": 230.0, "freq": 50.0 }, "nodes": ["n_ac", "0"] },
+    { "id": "load", "type": "RES", "params": { "resistance": 100.0 }, "nodes": ["n_ac", "n_load"] },
+    { "id": "shunt", "type": "RES", "params": { "resistance": 0.1 }, "nodes": ["n_load", "0"] },
+    { "id": "therm_node", "type": "THERMAL_NODE", "params": {}, "nodes": ["n_therm", "0"] },
+    { "id": "relay_contact", "type": "SWITCH", "params": { "on_res": 0.01, "off_res": 1e9 }, "nodes": ["n_load","n_out"] }
+  ],
+  "mappings": {
+    "voltage_sensor_node": "n_ac",
+    "current_shunt": "shunt",
+    "temperature_node": "n_therm",
+    "relay_node": "n_out"
+  },
+  "simulation": {
+    "duration": 0.1,
+    "timestep": 1e-4
+  }
+}

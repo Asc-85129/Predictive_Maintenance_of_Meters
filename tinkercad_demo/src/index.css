@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global grid background identical to Claude */
+body {
+  @apply bg-[#0f172a] text-white;
+}
+
+/* Canvas grid background */
+.canvas-grid {
+  background: linear-gradient(#1e293b 1px, transparent 1px),
+              linear-gradient(90deg, #1e293b 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-color: #0f172a;
+}
+
+/* Hide scrollbar for panels */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 10px;
+}
